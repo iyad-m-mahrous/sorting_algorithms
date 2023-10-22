@@ -57,11 +57,14 @@ int lomuto_part(int *array, size_t size)
 		if (array[j] < array[idx_pivot] || j == idx_pivot)
 		{
 			i++;
-			temp = array[i];
-			array[i] = array[j];
-			array[j] = temp;
-			if (i != j)
-				print_array(initial_array, initial_size);
+			if (array[i] != array[j])
+			{
+				temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+				if (i != j)
+					print_array(initial_array, initial_size);
+			}
 		}
 	}
 	return (i);
