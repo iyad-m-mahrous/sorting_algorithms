@@ -10,15 +10,15 @@
  */
 void shell_sort(int *array, size_t size)
 {
-	int i = 0, j = 0, temp = 0, k = 0, l = 1, start = 0, m = 0;
+	int i = 0, j = 0, temp = 0, k = 0, l = 1, start = 0;
+
+	if (!array || size <= 1)
+		return;
 
 	while (l < (int) size / 3)
 		l = 3 * l + 1;
-	m = l;
 	while (l >= 1)
 	{
-		if (l < m)
-			print_array(array, size);
 		while (start < l)
 		{
 			for (i = start; i < (int) size; i += l)
@@ -37,6 +37,7 @@ void shell_sort(int *array, size_t size)
 			}
 			start++;
 		}
+		print_array(array, size);
 		start = 0;
 		l = (l - 1) / 3;
 	}
