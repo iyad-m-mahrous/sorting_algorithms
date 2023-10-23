@@ -35,7 +35,7 @@ void shell_sort(int *array, size_t size)
 			start++;
 		}
 		start = 0;
-		l = l / 3;
+		l = (l - 1) / 3;
 		print_array(array, size);
 	}
 }
